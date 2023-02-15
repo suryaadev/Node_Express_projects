@@ -1,1 +1,2 @@
-console.log("io")
+const nav = require("./second");
+console.log(nav);
