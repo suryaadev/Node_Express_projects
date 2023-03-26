@@ -1,23 +1,25 @@
 const express = require("express");
+const Task = require("../models/Tasks");
 
 const getAllTask = (req, res) => {
   res.send("all items from controller");
 };
 
-const createTask = (req, res) => {
-  res.send("create task");
+const createTask = async (req, res) => {
+  const task = await Task.create(req.body);
+  res.status(201).json({ task, message: "Task sucessfully created" });
 };
 
 const getTask = (req, res) => {
-    res.send("get single task");
-}
+  res.json({ id: req.params.id });
+};
 
 const deleteTask = (req, res) => {
   res.send("delete task");
 };
 
 const updateTask = (req, res) => {
-  res.send("edit task");
+  res.send("update task");
 };
 
 module.exports = {
