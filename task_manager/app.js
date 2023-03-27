@@ -10,8 +10,8 @@ const PORT = process.env.PORT;
 const DB = process.env.DB;
 
 // middleware
-
 app.use(express.json());
+app.use(express.static('./public'))
 
 // routes
 app.use("/api/v1/tasks", routes);
