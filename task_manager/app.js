@@ -14,10 +14,6 @@ const DB = process.env.DB;
 app.use(express.json());
 
 // routes
-app.get("/hello", (req, res) => {
-  res.send("HOME");
-});
-
 app.use("/api/v1/tasks", routes);
 
 /**start script */
