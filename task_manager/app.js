@@ -4,6 +4,7 @@ const routes = require("./routes/tasks");
 const mongoose = require("mongoose");
 const connectDB = require("./db/connect");
 require("dotenv").config();
+const notFound = require('./middleware/not-found')
 
 /**constants env variables */
 const PORT = process.env.PORT;
@@ -15,6 +16,7 @@ app.use(express.static('./public'))
 
 // routes
 app.use("/api/v1/tasks", routes);
+app.use(notFound)
 
 /**start script */
 
