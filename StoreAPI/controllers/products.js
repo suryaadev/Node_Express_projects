@@ -1,6 +1,11 @@
 const express = require("express");
 
-const getAllProducts = (req, res) => {
+const getAllProducts = async (req, res) => {
+  // throw new Error("testing error");
+  res.status(200).json({ status: "OK" });
+};
+
+const getAllProductsStatic = async (req, res) => {
   try {
     res.status(200).json({ status: "OK" });
   } catch (error) {
@@ -8,4 +13,7 @@ const getAllProducts = (req, res) => {
   }
 };
 
-module.exports = getAllProducts;
+module.exports = {
+  getAllProducts,
+  getAllProductsStatic,
+};
